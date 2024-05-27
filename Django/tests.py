@@ -44,9 +44,9 @@ class ModelTest(TestCase):
         self.assertEquals('', '')
 
 
-DEVICES_URL = '/api/ztdevice'
-DEVICES_DETAIL_URL = '/api/ztdevice'
-DEVICES_REQUEST_URL = '/api/ztdevicerequest'
+DEVICES_URL = '/api/ztdevice/'
+DEVICES_DETAIL_URL = '/api/ztdevice/'
+DEVICES_REQUEST_URL = '/api/ztdevicerequest/'
 
 
 class APICallTest(TestCase):
@@ -79,6 +79,7 @@ class APICallTest(TestCase):
         self.assertIn('last_update', res.data)
 
     def test_update_device_request(self):
+        # TODO Check why test breaks when running in sequence
         """Test API Update Device Request Call"""
         tags = {"level": "value2", "level2": "value"}
         new_device = models.ZerotierRequestAccess.objects.create(
@@ -106,7 +107,7 @@ class APICallTest(TestCase):
                   "serial_number": "1234",
                   "tags": "{\"level\": \"value2\", \"level2\": \"value\"}"
                   }
-        res = self.client.put(DEVICES_REQUEST_URL + '/1', device)
+        res = self.client.put(DEVICES_REQUEST_URL + '1', device)
         new_device.refresh_from_db()
         self.assertEquals(res.status_code, status.HTTP_200_OK)
         self.assertEquals(new_device.region, 'CN')

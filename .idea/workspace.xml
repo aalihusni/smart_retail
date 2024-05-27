@@ -5,34 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7a3bee1-0216-45e4-98df-6e6c5eccd2f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/djangoProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0002_remove_zerotierdevices_tags_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0003_alter_zerotierdevices_last_online_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0004_alter_zerotierdevices_last_online_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0005_alter_zerotierdevices_tags_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0006_alter_zerotierdevices_tags_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/0007_alter_zerotierdevices_last_online_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Django/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "aalihusni"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:aalihusni/smart_retail.git",
+    "accountId": "8a550234-7979-40e9-97de-7b817263632c"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
 }]]></component>
@@ -243,7 +233,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715929099594</updated>
-      <workItem from="1715929105682" duration="86872000" />
+      <workItem from="1715929105682" duration="93382000" />
     </task>
     <servers />
   </component>

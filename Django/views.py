@@ -1,12 +1,13 @@
 from django.contrib.auth.models import Group
 from django.http import JsonResponse
+from drf_spectacular.utils import extend_schema
 from rest_framework import status, permissions
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework import viewsets
 from Django.serializers import ZerotierDeviceSerializer, DeviceDetailsSerializer, ZerotierRequestSerializer, \
-    GroupSerializer, UserSerializer
+    GroupSerializer, UserSerializer, EmptyPayloadResponseSerializer
 from Django.models import DeviceDetails, ZerotierDevices, ZerotierRequestAccess, User
 
 
@@ -40,6 +41,7 @@ ZT_DEVICE_DETAIL = 'ztdevicedetails'
 
 @api_view(['GET', 'POST'])
 @permission_classes((permissions.AllowAny,))
+@extend_schema(request=EmptyPayloadResponseSerializer, responses=EmptyPayloadResponseSerializer)
 def zt_devices_cr(request, table_name):
     """
         List all devices records
@@ -86,6 +88,8 @@ def zt_devices_cr(request, table_name):
 
 @api_view(['PUT', 'GET'])
 @permission_classes((permissions.AllowAny,))
+@extend_schema(request=EmptyPayloadResponseSerializer,
+               responses={201: (ZerotierDeviceSerializer, ZerotierRequestSerializer, DeviceDetailsSerializer)})
 def zt_devices_ud(request, table_name, pk=0):
     """
        Get devices by id

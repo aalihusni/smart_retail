@@ -3,6 +3,10 @@ from rest_framework import serializers
 from Django.models import DeviceDetails, ZerotierDevices, ZerotierRequestAccess
 
 
+class EmptyPayloadResponseSerializer(serializers.Serializer):
+    detail = serializers.CharField()
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -54,7 +58,7 @@ class ZerotierDeviceSerializer(serializers.ModelSerializer):
 
 
 class ZerotierRequestSerializer(serializers.ModelSerializer):
-    class Meta: 
+    class Meta:
         # TODO remove duplicated code
         model = ZerotierRequestAccess
         fields = ['last_update', 'zt_ip_address', 'region', 'member_id', 'last_online', 'machine_category', 'local_ip',
