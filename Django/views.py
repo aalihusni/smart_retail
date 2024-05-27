@@ -70,20 +70,20 @@ def zt_devices_cr(request, table_name):
             serializer = ZerotierDeviceSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+                return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+            return JsonResponse(status=status.HTTP_400_BAD_REQUEST)
         elif ZT_DEVICE_REQUEST == table_name:
             serializer = ZerotierRequestSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+            return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         elif ZT_DEVICE_DETAIL == table_name:
             serializer = DeviceDetailsSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+            return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['PUT', 'GET'])
@@ -154,3 +154,22 @@ def zt_devices_ud(request, table_name, pk=0):
             if serializer.is_valid():
                 serializer.save()
                 return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+@extend_schema(request=ZerotierRequestAccess,
+               responses={201: ZerotierDeviceSerializer})
+def zt_approve(request, pk=0):
+    """Approve the request device"""
+    try:
+        ztdevices = ZerotierRequestAccess.objects.get(pk=pk)
+    except ZerotierRequestAccess.DoesNotExist:
+        return JsonResponse(ZerotierRequestAccess.DoesNotExist, status=status.HTTP_404_NOT_FOUND)
+    data = ZerotierRequestSerializer(ztdevices, many=False).data
+    serializer = ZerotierDeviceSerializer(data=data)
+    if serializer.is_valid():
+        serializer.save()
+        ztdevices.delete()
+        return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+    return JsonResponse(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

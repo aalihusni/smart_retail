@@ -49,10 +49,11 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
+    path('api/ztdevicerequest/approve/<int:pk>', views.zt_approve),
     path('api/<slug:table_name>/', views.zt_devices_cr),
     path('api/<slug:table_name>/<int:pk>', views.zt_devices_ud),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-    # Optional UI:
+    # Optional UI
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
